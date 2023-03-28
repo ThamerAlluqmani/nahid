@@ -928,6 +928,7 @@ i {
 
 .user-img {
     display: flex;
+    
     /* margin-top: auto; */
 }
 
@@ -940,6 +941,7 @@ i {
     height: 60px;
     border: 4px solid var(--dark-green);
     margin-right: 10px;
+    background: white;
 }
 
 .post-body .post-info {
