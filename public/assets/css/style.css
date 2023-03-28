@@ -3396,3 +3396,7 @@ a {
 .fixed-top img {
     vertical-align: 0;
 }
+
+.fs-125rem{
+    font-size: 1.25rem;
+}
