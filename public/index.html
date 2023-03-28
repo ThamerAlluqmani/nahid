@@ -1,89 +1,671 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.18.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.18.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.18.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' id='bootstrap-css' href='assets/css/bootstrap.min.css' type='text/css' media='all' />
+
+    <!-- Custom CSS Style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!--  Slick CSS -->
+    <link rel='stylesheet' href='assets/css/slick-slider.css' type='text/css' media='all' />
+
+    <title>منصة خدمات اللغة العربية</title>
+
+</head>
+
+<body dir="rtl">
+    <button onclick="topFunction()" id="scrollTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <section class="header" style="padding-bottom: 120px;">
+
+        <div class="container__not-used">
+
+            <div class="header-top sticky-header" id="myHeader">
+                <div class="container-fluid">
+                    <div class="flex" id="navbar">
+
+                        <a href="index.html" class="logo"><img src="images/logo.png" alt="" width="250"></a>
+
+                        <nav class="menu-navigation">
+                            <ul class="primary-list">
+                                <li class=""><a href="index.html">الرئيسية</a></li>
+                                <li class="has-submenu">
+                                    <a href="projects.html">المشاريع</a>
+                                    <ul class="sub-menu">
+                                        <li id="" class=""><a href="projects.html" class="">المشاريع</a></li>
+                                        <li id="" class=""><a href="projects%20-%20details.htmlhtml" class="">تفاصيل المشروع</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="seller-search.html">الخبراء</a>
+                                    <ul class="sub-menu">
+                                        <li id="" class=""><a href="seller-search.html" class="">صفحة البحث عن مقدمي الخدمة</a></li>
+                                        <li id="" class=""><a href="seller.html" class="">صفحة مقدم الخدمة</a></li>
+                                        <li id="" class=""><a href="buyer.html" class="">صفحة مقدم الطلب</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about.html">عن المنصة</a></li>
+                            </ul>
+                            <ul class="secondary-list">
+                                <li>
+                                    <a href="user_login.html" class="">
+                                        <i class="fa-solid fa-right-to-bracket"></i>
+                                        <span>تسجيل الدخول</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="user_register.html" class="">
+                                        <i class="fa-solid fa-user-plus"></i>
+                                        <span>تسجيل جديد</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="favorite.html" class="favorite-icon">
+                                        <i class="fa-solid fa-heart"></i>
+                                        <span class="item_total">0</span>
+                                        <span class="">المفضلة</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#_" class="">
+                                        <img class="ar-lang d-none" src="images/ar-lang.png" alt="">
+                                        <img class="en-lang" src="images/en-lang.png" alt="">
+                                        <span class="lang">English</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <!-- Mobile Menu -->
+                        <div class="mobile-menu">
+                            <a href="#_" class="toggleMobileMenu"><i class="fa-solid fa-bars"></i></a>
+                            <div class="mobileMenu">
+                                <ul class="d-flex justify-content-center align-items-center white-color">
+                                    <li><a href="user_login.html"><i class="fa-solid fa-right-to-bracket"></i></a></li>
+                                    <li><a href="user_register.html"><i class="fa-solid fa-user-plus"></i></a></li>
+                                    <li><a href="favorite.html"><i class="fa-solid fa-heart"></i></a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="index.html">الرئيسية</a></li>
+                                    <li class="has-submenu">
+                                        <a href="projects.html">المشاريع</a>
+                                        <ul class="sub-menu">
+                                            <li id="" class=""><a href="projects.html" class="">المشاريع</a></li>
+                                            <li id="" class=""><a href="projects%20-%20details.htmlhtml" class="">تفاصيل المشروع</a></li>
+                                            <li id="" class=""><a href="service%20-%20details.htmlhtml" class="">تفاصيل الخدمة</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="seller-search.html">الخبراء</a>
+                                        <ul class="sub-menu">
+                                            <li id="" class=""><a href="seller-search.html" class="">صفحة البحث عن مقدمي الخدمة</a></li>
+                                            <li id="" class=""><a href="seller.html" class="">صفحة مقدم الخدمة</a></li>
+                                            <li id="" class=""><a href="buyer.html" class="">صفحة مقدم الطلب</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="about.html">عن المنصة</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- <div class="cart-container">
+
+                    <div class="cart-item">
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="cart-post-img">
+                                    <img src="images/post-1.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-8 ">
+                                <div class="ct-post-title">ترجمة ملفات من اللغة العربية إلى الإنجليزية</div>
+
+                                <div class="ct-date row">
+                                    <span class="col-6 ct-delivery inline-icon">
+                                        <p>التسليم:</p>
+                                        <p class="bold">3-2 أيام</p>
+                                    </span>
+                                    <span class="col-6 ct-time inline-icon">
+                                        <i class="fa-solid fa-clock "></i>
+                                        <p class="bold">منذ ساعتين</p>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-2 remove-post">إزالة</div>
+                        </div>
+                    </div>
+
+                </div> -->
+
+            </div>
+
+            <div class="header-bottom hero-body container">
+                <div class="content">
+                    <h1>أسهل الطرق لإنجاز مهامك العملية والعلمية</h1>
+                    <p>أعمل مع نخبة من المتميزين والخبراء للحصول على أفضل النتائج بأقل وقت ومال</p>
+                    <div class="inputs">
+
+                        <a href="#_" class="btn search-btn ">بحث</a>
+
+                        <div href="#_" class="btn service-btn wrapper-dropdown" tabindex="1" id="ddList">
+                            <span>الخدمات</span>
+                            <ul class="dropdown">
+                                <li><a href="#_"><i class="icon-user"></i>ترجمة</a></li>
+                                <li><a href="#_"><i class="icon-cog"></i>تدقيق لغوي</a></li>
+                                <li><a href="#_"><i class="icon-remove"></i>كتابة محتوى</a></li>
+                            </ul>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+
+                        <input type="text " placeholder="البحث عن... " class="search-field ">
+
+                    </div>
+                </div>
+                <div class="img-content ">
+                    <img src="images/bg-img.png " alt=" ">
+                </div>
+            </div>
+
+            <a href="#service-section" class="row w-100 d-block mouse-wrapper">
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <div class="main container">
+
+        <!-- Services -->
+        <div class="service-section" id="service-section">
+            <h1 class="title sm-heading">خَدَماتُنا</h1>
+            <p class="sub-title sm-sub-heading">كافة الخدمات الإبداعية والاحترافية لتطوير وتنمية أعمالك</p>
+            <div class="service-category-container">
+                <div class="service-category-item">
+                    <div class="category-card">
+                        <img src="images/editing.png ">
+                        <div class="img-overlay"></div>
+                        <a href="#_" class="category-btn">التدقيق اللغوي</a>
+                    </div>
+                </div>
+                <div class="service-category-item">
+                    <div class="category-card">
+                        <img src="images/translation.png" alt=" ">
+                        <div class="img-overlay"></div>
+                        <a href="#_" class="category-btn">الترجمة</a>
+                    </div>
+                </div>
+                <div class="service-category-item ">
+                    <div class="category-card ">
+                        <img src="images/grammar.png" alt=" ">
+                        <div class="img-overlay "></div>
+                        <a href="#_" class="category-btn">التشكيل</a>
+                    </div>
+                </div>
+                <div class="service-category-item ">
+                    <div class="category-card ">
+                        <img src="images/content_writing.png" alt=" ">
+                        <div class="img-overlay "></div>
+                        <a href="#_" class="category-btn">صياغة المحتوى</a>
+                    </div>
+                </div>
+                <div class="service-category-item">
+                    <div class="category-card">
+                        <img src="images/others.png" alt="">
+                        <div class="img-overlay "></div>
+                        <a href="#_" class="category-btn ">أخرى...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Services -->
+        <div class="featured-service-section ">
+            <h1 class="title sm-heading">أكثر الخدمات طلباً</h1>
+            <p class="sub-title sm-sub-heading">تقديم خدمات ذات طابع فريد من نوعه بدقة عالية وسرعة في الأداء</p>
+            <div id="services" class="sellers sellers-container" data-slick='{"slidesToShow ": 3, "slidesToScroll ": 1}'>
+
+                <!-- card 1 -->
+                <div class="post-card">
+
+                    <a href="projects%20-%20details.htmlhtml " class="post-header">
+                        <img src="images/post-1.jpg">
+                    </a>
+
+                    <div class="post-body">
+                        <a href="buyer.html" class="user-img">
+                            <img src="images/user-2(circle).png">
+                        </a>
+
+                        <div class="post-info">
+                            <div class="flex">
+                                <a href="buyer.html" class="name">محمد الشهراني</a>
+                                <a href="#_" class="bookmark">
+                                    <i class="fa-solid fa-bookmark"></i>
+                                </a>
+                            </div>
+                            <a href="projects%20-%20details.htmlhtml" class="post-title">ترجمة ملفات من العربية إلى الإنجليزية</a>
+                        </div>
+
+                        <div class="post-footer">
+                            <div class="post-date">
+                                <span class="date">
+                                    <p>التسليم:</p>
+                                    <p class="delivery-time">3-2 أيام</p>
+                                </span>
+                                <span class="time">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <p class="post-time">منذ ساعتين</p>
+                                </span>
+                            </div>
+                            <div class="tag">
+                                <span class="tag-type">
+                                        <i class="fa-solid fa-tag"></i>
+                                        <p class="post-tag">تدقيق</p>    
+                                    </span>
+                                <p class="service-price"><span class="from">30</span> ريال - <span class="to">90</span> ريال</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- card-end -->
+
+                <!-- card 2 -->
+                <div class="post-card">
+
+                    <a href="projects%20-%20details.htmlhtml" class="post-header">
+                        <img src="images/post-3.jpg">
+                    </a>
+
+                    <div class="post-body">
+                        <a href="buyer.html" class="user-img">
+                            <img src="images/user-2(circle).png">
+                        </a>
+
+                        <div class="post-info">
+                            <div class="flex">
+                                <a href="buyer.html" class="name">صالح العلي</a>
+                                <a href="#" class="bookmark">
+                                    <i class="fa-solid fa-bookmark"></i>
+                                </a>
+                            </div>
+                            <a href="projects%20-%20details.htmlhtml" class="post-title">مطلوب تدقيق وتنسيق بحث علمي</a>
+                        </div>
+
+                        <div class="post-footer">
+                            <div class="post-date">
+                                <span class="date">
+                                        <p>التسليم:</p>
+                                        <p class="delivery-time">5-3 أيام</p>
+                                    </span>
+                                <span class="time">
+                                        <i class="fa-solid fa-clock"></i>
+                                        <p class="post-time">منذ 3 ساعات</p>
+                                    </span>
+                            </div>
+                            <div class="tag">
+                                <span class="tag-type">
+                                        <i class="fa-solid fa-tag"></i>
+                                        <p class="post-tag">تدقيق</p>    
+                                    </span>
+                                <p class="service-price"><span class="from">50</span> ريال - <span class="to">120</span> ريال</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- card-end -->
+
+                <!-- card 3 -->
+                <div class="post-card">
+
+                    <a href="projects%20-%20details.htmlhtml" class="post-header">
+                        <img src="images/post-2.jpg">
+                    </a>
+
+                    <div class="post-body">
+                        <a href="buyer.html" class="user-img">
+                            <img src="images/user-2(circle).png">
+                        </a>
+
+                        <div class="post-info">
+                            <div class="flex">
+                                <a href="buyer.html" class="name">زياد الصلوي</a>
+                                <a href="#" class="bookmark">
+                                    <i class="fa-solid fa-bookmark"></i>
+                                </a>
+                            </div>
+                            <a href="projects%20-%20details.htmlhtml" class="post-title">كتابة محتوى باللغة العربية</a>
+                        </div>
+
+                        <div class="post-footer">
+                            <div class="post-date">
+                                <span class="date">
+                                        <p>التسليم:</p>
+                                        <p class="delivery-time">2-1 أيام</p>
+                                    </span>
+                                <span class="time">
+                                        <i class="fa-solid fa-clock"></i>
+                                        <p class="post-time">منذ ساعة</p>
+                                    </span>
+                            </div>
+                            <div class="tag">
+                                <span class="tag-type">
+                                        <i class="fa-solid fa-tag"></i>
+                                        <p class="post-tag">تدقيق</p>    
+                                    </span>
+                                <p class="service-price"><span class="from">40</span> ريال - <span class="to">70</span> ريال</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- card-end -->
+
+            </div>
+
+        </div>
+
+        <!-- Featured Experts -->
+        <div class="featured-expert">
+            <h1 class="title sm-heading">فريق متميز من الخبراء</h1>
+            <p class="sub-title sm-sub-heading">يتمتع الفريق بقوة الإنتاجية والأداء المتقن ورضا العملاء والمواءمة الإستراتيجية</p>
+            <div id="experts" class="sellers sellers-container" data-slick='{"slidesToShow": 4,"slidesToScroll ": 1}'>
+
+                <!-- Seller 1 -->
+                <div class="pr-15 pl-15 ">
+                    <div class="seller-card text-center ">
+                        <div class="seller-img ">
+                            <a href="#_ ">
+                                <img src="images/user-2(circle).png " alt=" " />
+                            </a>
+                        </div>
+                        <div class="seller-content ">
+                            <h2 class="mb-2 ">
+                                <a href="seller.html ">عبدالرحمن الحاج</a>
+                                <i class="fas fa-check-circle verified " title="Verified "></i>
+                            </h2>
+                            <div class="seller-hourly-rate ">
+                                <h4>مترجم</h4>
+                            </div>
+                            <div class="star-rating ">
+                                <i class="fa-solid fa-star empty-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                            </div>
+                            <ul class="list-inline ">
+                                <li class="list-inline-item ">
+                                    <i class="fas fa-globe-asia "></i>
+                                    <span>السعودية</span>
+                                </li>
+                                <li class="list-inline-item ">
+                                    <i class="fas fa-user-shield "></i>
+                                    <span>محترف</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seller 2 -->
+                <div class="pr-15 pl-15 ">
+                    <div class="seller-card text-center ">
+                        <div class="seller-img ">
+                            <a href="#_ ">
+                                <img src="images/user-2(circle).png " alt=" " />
+                            </a>
+                        </div>
+                        <div class="seller-content ">
+                            <h2 class="mb-2 ">
+                                <a href="seller.html ">محمد القحطاني</a>
+                            </h2>
+                            <div class="seller-hourly-rate ">
+                                <h4>صائغ محتوى</h4>
+                            </div>
+                            <div class="star-rating ">
+                                <i class="fa-solid fa-star empty-star "></i>
+                                <i class="fa-solid fa-star empty-star "></i>
+                                <i class="fa-solid fa-star empty-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                            </div>
+                            <ul class="list-inline ">
+                                <li class="list-inline-item ">
+                                    <i class="fas fa-globe-asia "></i>
+                                    <span>السعودية</span>
+                                </li>
+                                <li class="list-inline-item ">
+                                    <i class="fas fa-user-shield "></i>
+                                    <span>نشط</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seller 3 -->
+                <div class="pr-15 pl-15 ">
+                    <div class="seller-card text-center ">
+                        <div class="seller-img ">
+                            <a href="#_ ">
+                                <img src="images/user-2(circle).png " alt=" " />
+                            </a>
+                        </div>
+                        <div class="seller-content ">
+                            <h2 class="mb-2 ">
+                                <a href="seller.html ">فيصل الشمري</a>
+                                <i class="fas fa-check-circle verified " title="Verified "></i>
+                            </h2>
+                            <div class="seller-hourly-rate ">
+                                <h4>مدقق نحوي</h4>
+                            </div>
+                            <div class="star-rating ">
+                                <i class="fa-solid fa-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                            </div>
+                            <ul class="list-inline ">
+                                <li class="list-inline-item ">
+                                    <i class="fas fa-globe-asia "></i>
+                                    <span>السعودية</span>
+                                </li>
+                                <li class="list-inline-item ">
+                                    <i class="fas fa-user-shield "></i>
+                                    <span>متميز</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seller 4 -->
+                <div class=" pr-15 pl-15 ">
+                    <div class="seller-card text-center ">
+                        <div class="seller-img ">
+                            <a href="#_ ">
+                                <img src="images/user-2(circle).png " alt=" " />
+                            </a>
+                        </div>
+                        <div class="seller-content ">
+                            <h2 class="mb-2 ">
+                                <a href="seller.html ">عمر الغامدي</a>
+                            </h2>
+                            <div class="seller-hourly-rate ">
+                                <h4>كاتب محتوى</h4>
+                            </div>
+                            <div class="star-rating ">
+                                <i class="fa-solid fa-star empty-star "></i>
+                                <i class="fa-solid fa-star empty-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                                <i class="fa-solid fa-star "></i>
+                            </div>
+                            <ul class="list-inline ">
+                                <li class="list-inline-item ">
+                                    <i class="fas fa-globe-asia "></i>
+                                    <span>السعودية</span>
+                                </li>
+                                <li class="list-inline-item ">
+                                    <i class="fas fa-user-shield "></i>
+                                    <span>متمرس</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <section class="statistics-section ">
+
+            <div class="statistics-container">
+
+                <div class="statistics-element ">
+
+                    <span class="icon ">
+                        <img src="images/delivery-box.png " alt=" ">
+                    </span>
+                    <h1 class="counter ">15K</h1>
+                    <p class="element-name ">الطلبات المستلمة</p>
+
+                </div>
+                <div class="statistics-element ">
+
+                    <span class="icon ">
+                        <img src="images/comments.png " alt=" ">
+                    </span>
+                    <h1 class="counter ">9K</h1>
+                    <p class="element-name ">التعليقات الإيجابية</p>
+
+                </div>
+                <div class="statistics-element ">
+
+                    <span class="icon ">
+                        <img src="images/users.png " alt=" ">
+                    </span>
+                    <h1 class="counter ">14K</h1>
+                    <p class="element-name ">عدد المستخدمين</p>
+
+                </div>
+                <div class="statistics-element ">
+
+                    <span class="icon ">
+                        <img src="images/deals.png " alt=" ">
+                    </span>
+                    <h1 class="counter ">17K</h1>
+                    <p class="element-name ">مجموع المعاملات<br>(المبيعات)</p>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Advertisement -->
+        <section class="ad-section">
+            <div class="ad-container">
+                <div class="ad-content ">
+                    <h1>أبحث عن الشخص المناسب والموهوب لأداء مهامك بدقة وكفاءة عالية لرفع مستوع عملك</h1>
+                    <p>أنشر إعلانك لمئات من الخبراء والمتميزين وتصفح مختلف السيّر الذاتية</p>
+                    <button>ابدأ بطلبك الأن</button>
+                </div>
+                <div class="ad-img ">
+                    <img src="images/ad.png " alt=" ">
+                </div>
+            </div>
+        </section>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <section class="footer">
+        <div class="footer-container">
+            <div class="footer-content row ">
+                <div class="col-lg-6 col-md-12 col-sm-12 address ">
+                    <div class="logo ">
+                        <img src="images/website-logo.png " alt=" ">
+                    </div>
+                    <p id="location-address ">عنوان المجمع</p>
+                    <p id="support-email ">فريق الدعم</p>
+                    <div class="inputs ">
+                        <input type="text " placeholder="أكتب البريد الإلكتروني " class="search-field ">
+                        <a href="#_ " class="btn search-btn ">تسجيل</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 flex-row links ">
+                    <div class="col-lg-4 col-md-4 col-sm-6 ">
+                        <ul class="list ">
+                            <li>الخدمات</li>
+                            <li>عنوان فرعي</li>
+                            <li>عنوان فرعي</li>
+                            <li>عنوان فرعي</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 ">
+                        <ul class="list ">
+                            <li>المجتمع</li>
+                            <li>عنوان فرعي</li>
+                            <li>عنوان فرعي</li>
+                            <li>عنوان فرعي</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 ">
+                        <ul class="list ">
+                            <li>الدعم</li>
+                            <li>الأسئلة الشائعة</li>
+                            <li>شروط الإستخدام</li>
+                            <li>الخصوصية</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copywrite flex ">
+                <p class="content ">الحقوق محفوظة - مجمع الملك سلمان العالمي للغة العربية &#169; 2022</p>
+                <div class="social-media flex ">
+                    <a href="#_ "><i class="fa-brands fa-linkedin "></i></a>
+                    <a href="#_ "><i class="fa-brands fa-youtube "></i></i></a>
+                    <a href="#_ "><i class="fa-brands fa-facebook-square "></i></i></a>
+                    <a href="#_ "><i class="fa-brands fa-twitter-square "></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js " integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js " integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy " crossorigin="anonymous "></script>
+    <!-- Plugin - slicker -->
+    <script type='text/javascript' src='assets/js/plugins.js' id='jquery-core-js'></script>
+    <script type='text/javascript' src='assets/js/plugin.js' id='jquery-core-js'></script>
+    <!-- Script -->
+    <script type='text/javascript' src="assets/js/script.js"></script>
+    <!-- <script type='text/javascript' src="localStorage.js"></script> -->
+
+</body>
+
 </html>
