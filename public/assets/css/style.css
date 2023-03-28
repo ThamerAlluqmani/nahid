@@ -139,7 +139,7 @@ button {
 }
 
 i+span {
-    /* font-size: 20px; */
+    font-size: 1rem;
 }
 
 i+p {
@@ -1015,6 +1015,7 @@ i {
 .post-date p,
 .post-footer p {
     margin: 0;
+    font-size: 1rem;
 }
 
 .post-date .date,
@@ -3237,6 +3238,7 @@ i.verified {
     padding: 30px;
     border-radius: 20px;
     margin-bottom: 25px;
+    height: 320px;
     box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
     /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2); */
     /* border: 1px solid var(--bright-green); */
@@ -3244,9 +3246,7 @@ i.verified {
 }
 
 .seller-card img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
+    max-width: 100px;
     margin: 0 auto 30px;
 }
 
