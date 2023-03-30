@@ -711,10 +711,9 @@ i {
 }
 
 .img-content img {
-  width: 500px;
-  height: 350px;
-  /* max-height: 670px; */
-  z-index: 1;
+    width: 900px;
+    /* max-height: 670px; */
+    z-index: 1;
 }
 
 /* .circle {
@@ -3351,4 +3350,14 @@ a {
 
 .fixed-top img {
   vertical-align: 0;
+}
+
+.fs-125rem{
+    font-size: 1.25rem;
+}
+.logo h4{
+    font-size: 23px;
+    position: relative;
+    z-index: 3;
+    color: var(--dark-green);
 }
